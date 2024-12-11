@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@keyframes slide-up {
+    from {
+        transform: translateY(100%) translateX(-50%);
+    }
+
+    to {
+        transform: translateY(0) translateX(-50%);
+    }
+}
+
+@keyframes slide-left {
+    from {
+        transform: translateX(-120%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes gradient-hover {
+    from {
+        background-color: transparent;
+    }
+
+    to {
+        background-color: rgb(242, 177, 56);
+    }
+}
+
+/*Start of banner Code*/
+.banner {
+    height: 90vh;
+    width: 100%;
+    background: radial-gradient(circle, rgba(237, 236, 180, 0.4) 0%, rgba(0, 0, 0, 0.6) 70%), url("https://wallpaper.forfun.com/fetch/4f/4fdbc455c775f8e785e43ecf681103fc.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.banner>img {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    height: auto;
+    max-width: 100%;
+    min-width: 600px;
+    transform: translateX(-50%);
+    object-fit: contain;
+    object-position: bottom;
+    animation: slide-up 1s ease-out forwards;
+    z-index: 1;
+}
+
+.gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg,
+            transparent 0%,
+            rgba(25, 66, 99, 0.5) 50%,
+            rgba(3, 12, 19, 0.6) 90%);
+    z-index: 2;
+}
+
+.banner-text {
+    position: absolute;
+    top: 40%;
+    left: 1.5vw;
+    color: white;
+    font-family: "Bebas Neue", sans-serif;
+    animation: slide-left 2s ease-out forwards;
+    z-index: 4;
+}
+
+.banner-text>h1 {
+    font-size: clamp(50px, 10vw, 100px);
+}
+
+.banner-text>h1>span {
+    font-size: clamp(70px, 15vw, 150px);
+    background: linear-gradient(0deg,
+            #80BFFF 30%,
+            white 45% 55%,
+            #80BFFF 70%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.banner-text>figcaption {
+    font-size: clamp(30px, 3vw, 70px);
+}
+
+@media (orientation:portrait) {
+    .gradient {
+        background: linear-gradient(180deg,
+                transparent 0%,
+                rgba(25, 66, 99, 0.3) 70%,
+                rgba(3, 12, 19, 0.6) 90%);
+    }
+
+    .banner-text {
+        top: 75%;
+    }
+}
+
+.flag {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    background: linear-gradient(0deg,
+            #80BFFF 0% 30%,
+            white 30% 70%,
+            #80BFFF 70% 100%);
+    filter: brightness(0.8)
+}
+
+/*
+End of Banner Code
+
+Start of Info-section code
+*/
+
+.info-section {
+    background-color: rgb(75, 101, 135);
+    width: 100%;
+    font-family: "roboto", sans-serif;
+    display: flex;
+    overflow: hidden;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+
+.timeline-section {
+    width: 70%;
+    font-size: 20px;
+    padding-left: 10px;
+    color: white;
+}
+
+.timeline-section>h2 {
+    margin-bottom: 30px;
+    font-size: clamp(20px,7vw,40px);
+}
+
+.timeline {
+    display: flex;
+    font-size: clamp(20px,3vw,25px);
+}
+
+.timeline>ul {
+    list-style: none;
+    justify-self: flex-end;
+}
+
+.timeline>ul>li {
+    margin-bottom: 30px;
+    padding-left: 2%;
+    width: 90%;
+    background-image: linear-gradient(to right,
+            transparent 0%,
+            transparent 50%,
+            rgb(242, 177, 56) 50%,
+            rgb(242, 177, 56) 100%);
+    background-size: 200% 100%;
+    transition: background-position 0.7s;
+}
+
+.timeline>ul>li:hover {
+    background-position: -100% 0;
+}
+
+.timeline>ul>li>strong {
+    display: block;
+}
+
+.timeline>hr {
+    margin: 1% 0 4% auto;
+}
+
+
+
+.info-box{
+    width:30%;
+    height:fit-content;
+    background-color:rgb(242, 177, 56);
+    padding:5px 10px 5vh 10px;
+    margin-top: 5vh;
+    border-radius:10px 0 0 10px;
+}
+.items-center{
+    font-size: clamp(10px,3vw,15px);
+    display:flex;
+    gap:1vw;
+    justify-content:center;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+.items-center>img{
+    width:clamp(60px,50%,80px);
+    border-radius: 50%;
+    background-color:blanchedalmond; 
+}
+.info-box>hr{
+    width:70%;
+    
+    margin:10px auto 0 auto;
+}
+.info-box>ul{
+    list-style: none;
+}
+.info-box>ul>li{
+    margin:3px 0 7px 0;
+}
+.info-box>ul>li:first-child{
+    margin-top:3vh;
+}
+.info-box>h3{
+    font-size:15px;
+    text-decoration: none;
+    text-align: center;
+    margin-top: 5vh;
+}
+a{
+    display: block;
+    font-size: 19px;
+    text-decoration: none;
+    margin:5px;
+}
+a:hover{
+    color:darkcyan;
+    transition:color 1s;
+}
